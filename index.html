@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Clothing Analyzer · Oxford AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="analyzer-card">
+    <h1>
+      Clothing Analyzer
+      <span>Oxford AI</span>
+    </h1>
+    <div class="subhead">Snap · Describe · Brand · Price range (₱)</div>
+
+    <!-- Camera / preview area -->
+    <div class="camera-area">
+      <div class="camera-frame" id="cameraFrame">
+        <video id="cameraVideo" class="hidden" autoplay playsinline muted></video>
+        <img id="previewImage" class="image-preview hidden" src="#" alt="clothing preview">
+        <div class="camera-placeholder" id="cameraPlaceholder">
+          <span>📷</span>
+          <p>Camera ready</p>
+        </div>
+      </div>
+
+      <!-- Camera controls -->
+      <div class="camera-controls" id="cameraControls">
+        <button class="btn btn-primary" id="captureBtn" type="button">📸 Take Photo</button>
+      </div>
+
+      <!-- Retake / Leave controls (shown after capture) -->
+      <div class="camera-controls hidden" id="retakeControls">
+        <button class="btn btn-secondary" id="retakeBtn" type="button">📷 Retake</button>
+      </div>
+    </div>
+
+    <!-- action buttons -->
+    <div class="action-buttons">
+      <button class="btn btn-primary" id="analyzeBtn" type="button">🔍 Analyze</button>
+      <button class="btn btn-cancel hidden" id="cancelBtn" type="button">Cancel</button>
+    </div>
+
+    <!-- status message (errors, info) -->
+    <div id="statusMessage" class="status-message hidden"></div>
+
+    <!-- Result section -->
+    <div class="result-section" id="resultSection">
+      <div class="result-placeholder" id="placeholderMessage">
+        <span>👕</span>
+        Take a photo of clothing, then tap Analyze
+      </div>
+
+      <div id="resultContent" class="hidden">
+        <div class="result-item">
+          <div class="result-row">
+            <div class="result-label">Description</div>
+            <div class="result-value description-text" id="descOutput">—</div>
+          </div>
+          <div class="result-row">
+            <div class="result-label">Brand</div>
+            <div class="result-value" id="brandOutput">—</div>
+          </div>
+          <div class="result-row">
+            <div class="result-label">Price range</div>
+            <div class="result-value" id="priceOutput">—</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footnote">Powered by Oxford AI · Available in the Philippines only</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
